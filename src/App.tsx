@@ -4,6 +4,7 @@ import ChuckCard from './components/chuck_card';
 import ChuckInfo from './components/chuck_info';
 import ChuckJoke from './components/chuck_joke';
 import Joke from './joke';
+import ChuckJokePick from './components/chuck_joke_pick';
 
 
 // ChuckJoke is being tasked with handling an array of jokes, which seems to be beyond the scope suggested by its name.
@@ -57,15 +58,13 @@ function App() {
 			<ChuckInfo numberOfWhalesSaved={whalesSaved} numberOfRoundHouseKicks={roundHouseKicks} />
 
 			<h2>Jokes: </h2>
-			{/* <ChuckJoke jokes={jokes} /> */}
 			{jokes.map(({ id, joke }) => (
 				<ChuckJoke key={id} jokes={joke} />
 			))}
 
 			<h2>Filtered Jokes: </h2>
-			{/* <ChuckJoke jokes={filteredJokes} /> */}
 			{filteredJokes.map(({ id, joke }) => (
-				<ChuckJoke key={id} jokes={joke} />
+				<ChuckJokePick key={id} jokes={joke} />
 			))}
 		</div>
 	);
